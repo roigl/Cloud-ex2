@@ -4,12 +4,12 @@ import boto3
 
 scaleup_number = 80
 scaledown_number = 15
-
+worker_max = 30
 
 def scale(q: Queue, instances_list):
     if len(q)==0:
         set_key()
-    if len(q) >= scaleup_number:
+    if len(q) >= scaleup_number and worker_max > len(instances_list):
         upscale(instances_list)
     if (len(q) <= scaledown_number and len(instances_list) > 1):
         downscale(instances_list)
