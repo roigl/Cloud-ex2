@@ -90,6 +90,10 @@ ssh -i $KEY_PEM -o "StrictHostKeyChecking=no" -o "ConnectionAttempts=10" ubuntu@
     sudo apt update
     sudo apt install python3-flask -y
     sudo apt install python3-boto3 -y
+    sudo apt install python3-rq -y
+    sudo apt install python3-redis -y
+    sudo apt install python3-drill -y
+    sudo apt install python3-hashlib -y
     # run app
     nohup flask run --host 0.0.0.0  &>/dev/null &
     cd /home/ubuntu/
