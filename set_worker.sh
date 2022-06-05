@@ -3,6 +3,7 @@ ssh -i $2 -o "StrictHostKeyChecking=no" -o "ConnectionAttempts=10" ubuntu@$1 <<E
     export REDIS_HOST=$REDIS_HOST
     sudo apt update
     sudo apt install python3-rq -y
+    pip3 install rq redis hashlib
     python3 worker.py
     exit
 EOF
